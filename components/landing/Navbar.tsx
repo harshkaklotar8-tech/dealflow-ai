@@ -56,4 +56,29 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#0a0a0a] border-t border-[#1c1c1c] px-6 py-6 flex flex-col gap-4">
+          {['Features', 'Pricing', 'Integrations', 'Blog'].map((item) => (
+            
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="text-[#888] text-sm tracking-wide hover:text-white transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item}
+            </a>
+          ))}
+          <button className="btn-gold px-5 py-3 rounded-lg text-sm font-bold tracking-wide mt-2">
+            START FREE TRIAL
+          </button>
+        </div>
+      )}
+    </nav>
+  )
+}
