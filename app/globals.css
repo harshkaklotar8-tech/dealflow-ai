@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #070707;
+  --surface: #0f0f0f;
+  --border: #1c1c1c;
+  --text: #e2e2e2;
+  --muted: #555;
+  --gold: #f5c842;
+  --green: #3ddc84;
+  --red: #ff4d4d;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #070707;
+  color: #e2e2e2;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f5c842;
+}
+
+/* Selection */
+::selection {
+  background: rgba(245, 200, 66, 0.2);
+  color: #f5c842;
+}
+
+/* Ticker animation */
+.ticker-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+.ticker-inner {
+  display: flex;
+  gap: 60px;
+  animation: ticker 25s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Gold gradient text */
+.gold-gradient {
+  background: linear-gradient(135deg, #f5c842 0%, #fad55c 50%, #d4a82e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(15, 15, 15, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid #1c1c1c;
+}
+
+/* Glow effect */
+.gold-glow {
+  box-shadow: 0 0 30px rgba(245, 200, 66, 0.15);
+}
+
+/* Feature number */
+.feature-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 64px;
+  color: #1c1c1c;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+/* Pulse dot */
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #f5c842;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.8); }
+}
+
+/* Nav blur */
+.nav-blur {
+  background: rgba(7, 7, 7, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,200,66,0.07) 0%, transparent 70%);
+}
+
+/* Card hover */
+.card-hover {
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  border-color: #333;
+  transform: translateY(-2px);
+}
+
+/* Button */
+.btn-gold {
+  background: #f5c842;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+.btn-gold:hover {
+  background: #fad55c;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(245, 200, 66, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #e2e2e2;
+  border: 1px solid #1c1c1c;
+  transition: all 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: #333;
+  background: #0f0f0f;
+}
+
+/* Status badges */
+.badge-booked {
+  background: #1a1500;
+  color: #f5c842;
+}
+.badge-replied {
+  background: #0f2010;
+  color: #3ddc84;
+}
+.badge-sent {
+  background: #0f1f2e;
+  color: #60b4ff;
+}
+
+/* Section label */
+.section-label {
+  font-size: 10px;
+  color: #f5c842;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Bebas font utility */
+.font-bebas {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+}
